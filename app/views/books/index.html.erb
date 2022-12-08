@@ -1,8 +1,23 @@
-<h1>Books</h1>
-<% @books.each do |book| %>
-  <h3>Title:<%= book.title %>
-    Author:<%= book.author %>
-    Publication Year:<%= book.publication_year %>
-    Genre:<%= book.genre %>
-    Summary:<%= book.summary %></h3>
-<% end %>
+<h1><center>Books</h1></center>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Publication Year</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+        <th scope="row"><%= book.title %></th>
+        <td><%= book.author %></td>
+        <td><%= book.publication_year %></td>
+        <td><%= book.genre %></td>
+        <td><%= book.summary %></td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
