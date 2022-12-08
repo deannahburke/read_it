@@ -1,0 +1,8 @@
+<h1>Books</h1>
+<% @books.each do |book| %>
+  <h3>Title:<%= book.title %>
+    Author:<%= book.author %>
+    Publication Year:<%= book.publication_year %>
+    Genre:<%= book.genre %>
+    Summary:<%= book.summary %></h3>
+<% end %>
