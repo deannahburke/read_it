@@ -1,0 +1,15 @@
+<h1>Add A Book<h1>
+<%= form_with url: '/books', method: :post, local: true do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+    <%= f.label :publication_year, "Publication Year" %>
+    <%= f.select :publication_year, 1900..2023 %>
+    <%= f.label :genre %>
+    <%= f.text_field :genre %>
+    <%= f.label :summary %>
+    <%= f.text_field :summary %>
+    <%= f.submit "Add A Book" %>
+<% end %>
+    
