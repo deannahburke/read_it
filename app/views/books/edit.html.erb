@@ -1,0 +1,15 @@
+<div><h1>Edit Book</h1>
+<%= form_with url: "/books/#{@book.id}", method: :patch, local: true do |f| %>
+    <p><%= f.label :title %>
+    <%= f.text_field :title, :value => @book.title%></p>
+    <p><%= f.label :author %>
+    <%= f.text_field :author, :value => @book.author %></p>
+    <p><%= f.label :publication_year, "Publication Year" %>
+    <%= f.select :publication_year, 1900..(DateTime.now.year)%></p>
+    <p><%= f.label :genre %>
+    <%= f.text_field :genre, :value => @book.genre %></p>
+    <p><%= f.label :summary %>
+    <%= f.text_field :summary, :value => @book.summary %></p>
+    <p><%= f.submit "Update" %></p>
+<% end %>
+ </div>   
