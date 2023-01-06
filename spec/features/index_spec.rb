@@ -38,7 +38,7 @@ RSpec.describe 'books index page', type: :feature do
             expect(page).to have_button("Edit")
             click_button "Edit"
         end
-        expect(current_path).to eq("/books/edit")
-         
+        expect(current_path).to eq("/books/#{roadside_picnic.id}/edit")
     end
+
 end

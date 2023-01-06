@@ -18,6 +18,7 @@
         <td><%= book.publication_year %></td>
         <td><%= book.genre %></td>
         <td><%= book.summary %></td>
+        <td><%= button_to "Edit", "/books/#{book.id}/edit", method: :patch %></td>
         <td><%= button_to "Delete", "/books/#{book.id}", method: :delete %></td>
     </div>
     <% end %>
