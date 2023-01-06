@@ -21,4 +21,12 @@ RSpec.describe 'books index page', type: :feature do
         expect(page).to have_content(roadside_picnic.summary)
         expect(page).to have_content(blind_willow.genre)
     end
+
+    it "has a button to create a new book" do
+        visit "/books"
+
+        expect(page).to have_button("Add Book")
+        click_button "Add Book"
+        expect(current_path).to eq("/books/new")
+    end
 end
