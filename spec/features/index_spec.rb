@@ -29,4 +29,16 @@ RSpec.describe 'books index page', type: :feature do
         click_button "Add Book"
         expect(current_path).to eq("/books/new")
     end
+
+    it "has a button to edit a book" do
+        roadside_picnic = Book.create!(title: "Roadside Picnic", publication_year: 1972, author: "Arkady Strugatsky", genre: "Sci-Fi", summary: "Alien invasion of small town in Russia")
+        visit "/books"
+
+        within "#book-#{roadside_picnic.id}" do
+            expect(page).to have_button("Edit")
+            click_button "Edit"
+        end
+        expect(current_path).to eq("/books/edit")
+         
+    end
 end
