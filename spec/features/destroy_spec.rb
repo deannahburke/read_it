@@ -6,7 +6,7 @@ RSpec.describe 'destroy a book', type: :feature do
         blind_willow = Book.create!(title: "Blind Willow, Sleeping Woman", publication_year: 2008, author: "Haruki Murakami", genre: "Short Story", summary: "Collection of short stories")
         
         visit "/books"
-        
+
         within "#book-#{certain_hunger.id}" do 
             expect(page).to have_button("Delete")
             click_button "Delete"
