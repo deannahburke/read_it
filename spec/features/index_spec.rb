@@ -40,6 +40,12 @@ RSpec.describe 'books index page', type: :feature do
         end
         expect(current_path).to eq("/books/#{roadside_picnic.id}/edit")
     end
-    it 'has prepopulated form data and can update book on index page' do
+    
+    it 'has a wishlist button that takes you to a new page' do
+        visit "/books"
+        expect(page).to have_button("Wishlist!")
+        click_button "Wishlist!"
+
+        expect(current_path).to eq("/wishlist")
     end
 end
