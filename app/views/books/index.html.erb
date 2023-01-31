@@ -12,6 +12,7 @@
   <tbody>
     <% @books.each do |book| %>
     <tr>
+        <div id="book-<%= book.id%>">
         <th scope="row"><%= book.title %></th>
         <div id="book-<%= book.id%>">
         <td><%= book.author %></td>

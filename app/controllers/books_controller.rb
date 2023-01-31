@@ -20,7 +20,7 @@ class BooksController < ApplicationController
 
     def destroy
         book = Book.find(params[:book_id])
-        book.destroy
+        book.destroy 
         redirect_to "/books"
     end
 
@@ -29,12 +29,11 @@ class BooksController < ApplicationController
     end
 
     def update
-        # binding.pry
         @book = Book.find(params[:book_id])
         @book.update(book_params)
         redirect_to "/books"
-        # binding.pry
     end
+    
 private
     def book_params
         params.permit(:title, :author, :publication_year, :genre, :summary)
