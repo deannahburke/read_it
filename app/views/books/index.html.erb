@@ -1,5 +1,5 @@
 <h1><center>Books</h1></center>
-<table class="table table-striped">
+<div><table class="table table-striped">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Title</th>
@@ -7,6 +7,8 @@
       <th scope="col">Publication Year</th>
       <th scope="col">Genre</th>
       <th scope="col">Summary</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +16,6 @@
     <tr>
         <div id="book-<%= book.id%>">
         <th scope="row"><%= book.title %></th>
-        <div id="book-<%= book.id%>">
         <td><%= book.author %></td>
         <td><%= book.publication_year %></td>
         <td><%= book.genre %></td>
@@ -27,3 +28,4 @@
   </tbody>
 <p><%= button_to "Add Book", "/books/new", method: :get %></p>
 </table>
+</div>
