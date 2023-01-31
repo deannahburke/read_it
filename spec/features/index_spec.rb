@@ -21,4 +21,25 @@ RSpec.describe 'books index page', type: :feature do
         expect(page).to have_content(roadside_picnic.summary)
         expect(page).to have_content(blind_willow.genre)
     end
+
+    it "has a button to create a new book" do
+        visit "/books"
+
+        expect(page).to have_button("Add Book")
+        click_button "Add Book"
+        expect(current_path).to eq("/books/new")
+    end
+
+    it "has a button to edit a book" do
+        roadside_picnic = Book.create!(title: "Roadside Picnic", publication_year: 1972, author: "Arkady Strugatsky", genre: "Sci-Fi", summary: "Alien invasion of small town in Russia")
+        visit "/books"
+
+        within "#book-#{roadside_picnic.id}" do
+            expect(page).to have_button("Edit")
+            click_button "Edit"
+        end
+        expect(current_path).to eq("/books/#{roadside_picnic.id}/edit")
+    end
+    it 'has prepopulated form data and can update book on index page' do
+    end
 end
