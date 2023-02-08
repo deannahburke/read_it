@@ -1,15 +1,4 @@
-<div><h1>Add A Book</h1>
-<%= form_with url: '/books', method: :post, local: true do |f| %>
-    <p><%= f.label :title %>
-    <%= f.text_field :title %></p>
-    <p><%= f.label :author %>
-    <%= f.text_field :author %></p>
-    <p><%= f.label :publication_year, "Publication Year" %>
-    <%= f.select :publication_year, 1900..(DateTime.now.year) %></p>
-    <p><%= f.label :genre %>
-    <%= f.text_field :genre %></p>
-    <p><%= f.label :summary %>
-    <%= f.text_field :summary %></p>
-    <p><%= f.submit "Add A Book" %></p>
-<% end %>
- </div>   
+<%= render partial: 'form', locals: {
+                                    path: "/books",
+                                    method: :post,
+                                    button_text: "Add A Book"} %>
