@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/books', to: 'books#create'
   patch '/books/:book_id', to: 'books#update'
   delete '/books/:book_id', to: 'books#destroy'
-  
+
   get '/wishlist', to: 'wishlist#index'
+  get '/wishlist/new', to: 'wishlist#new'
 end
