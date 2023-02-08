@@ -6,10 +6,6 @@ RSpec.describe 'books index page', type: :feature do
 
         visit "/books/#{roadside_picnic.id}/edit"
 
-        # expect(page).to have_content("Roadside Picnic")
-        # expect(page).to have_content("Arkady Strugatsky")
-        # expect(page).to have_content("Sci-Fi")
-        # expect(page).to have_content("Alien invasion of small town in Russia")
         fill_in :author, with: "Boris Strugatsky"
         click_button "Update"
 
