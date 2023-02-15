@@ -7,6 +7,7 @@ RSpec.describe Book, type: :model do
      it {should validate_presence_of :summary}
      it {should validate_presence_of :publication_year}
      it {should validate_presence_of :genre}
-
+     it {should validate_presence_of :rating}
+     it {should validate_numericality_of :rating}
   end
 end
