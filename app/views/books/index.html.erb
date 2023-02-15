@@ -1,5 +1,5 @@
 <h1><center>Books</h1></center>
-<div><table class="table table-striped table-bordered">
+<div class="margin"><table class="table table-striped table-bordered">
   <thead class="thead-dark">
     <tr>
       <th scope="col"><center>Title</center></th>
@@ -7,6 +7,7 @@
       <th scope="col"><center>Publication Year</center></th>
       <th scope="col"><center>Genre</center></th>
       <th scope="col"><center>Summary</center></th>
+      <th scope="col"><center>Rating</center></th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
@@ -20,6 +21,12 @@
         <td><%= book.publication_year %></td>
         <td><%= book.genre %></td>
         <td><%= book.summary %></td>
+        <td><div class="flex gap-x-3 mb-4">
+            <% Book::MAX_RATING.times do |n| %>
+            <%= inline_svg_tag("star.svg",
+            class: "w-8 h-8 #{star_rating_class(book, n)}") %>
+        <% end %>
+</div></td>
         <td><%= button_to "Edit", "/books/#{book.id}/edit", method: :get %></td>
         <td><%= button_to "Delete", "/books/#{book.id}", method: :delete %></td>
     </div>

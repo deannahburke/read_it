@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <style>
-    div{
+    .margin{
         padding-left:25px;
     }
 </style>
@@ -9,6 +9,7 @@
     <title>ReadIt</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
