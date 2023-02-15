@@ -1,3 +1,5 @@
+<div class="margin">
+<h3>Add Book</h3>
 <%= form_with url: path, method: method, local: true do |f| %>
     <p><%= f.label :title %>
     <%= f.text_field :title %></p>
@@ -9,5 +11,8 @@
     <%= f.text_field :genre %></p>
     <p><%= f.label :summary %>
     <%= f.text_field :summary %></p>
+    <p><%= f.label :rating %>
+    <%= f.number_field :rating, in: 0..5  %></p>
     <p><%= f.submit button_text %></p>
 <% end %>
+</div>

@@ -1,4 +1,4 @@
-<div><h1>Edit Book</h1>
+<div class="margin"><h1>Edit Book</h1>
 <%= form_with url: "/books/#{@book.id}", method: :patch, local: true do |f| %>
     <p><%= f.label :title %>
     <%= f.text_field :title, :value => @book.title%></p>

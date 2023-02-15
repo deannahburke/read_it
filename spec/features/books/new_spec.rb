@@ -10,6 +10,7 @@ RSpec.describe 'create book' do
         select 1936, :from => "Publication Year"
         fill_in "Genre", with: "Self Help"
         fill_in "Summary", with: "Great Depression era book to help you make friends"
+        fill_in "Rating", with: 4
         click_button "Add"
 
         expect(current_path).to eq("/books")
