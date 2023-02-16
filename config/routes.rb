@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   get '/wishlist', to: 'wishlist#index'
   get '/wishlist/new', to: 'wishlist#new'
+  post '/wishlist', to: 'wishlist#create'
 end
