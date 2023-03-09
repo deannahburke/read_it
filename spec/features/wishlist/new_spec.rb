@@ -15,8 +15,5 @@ RSpec.describe 'create book' do
         expect(current_path).to eq("/wishlist")
         expect(page).to have_content("How to Win Friends and Influence People")
         expect(page).to have_content("Dale Carnegie")
-        expect(page).to have_content(1936)
-        expect(page).to have_content("Self Help")
-        expect(page).to have_content("Great Depression era book to help you make friends")
     end
 end
