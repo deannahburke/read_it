@@ -14,6 +14,7 @@
   </thead>
   <tbody>
     <% @books.each do |book| %>
+    <% if book.wishlisted == false %>
     <tr>
         <div id="book-<%= book.id%>">
         <th scope="row"><%= book.title %></th>
@@ -25,6 +26,7 @@
             <% Book::MAX_RATING.times do |n| %>
             <%= inline_svg_tag("star.svg",
             class: "w-8 h-8 #{star_rating_class(book, n)}") %>
+        <% end %>
         <% end %>
 </div></td>
         <td><%= button_to "Edit", "/books/#{book.id}/edit", method: :get %></td>

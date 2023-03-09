@@ -10,6 +10,7 @@ class BooksController < ApplicationController
     def create
         book = Book.new(book_params)
         if book.save
+            book.update_attribute(:wishlisted, false)
             redirect_to "/books"
             flash[:message] = "Book added!"
         else 

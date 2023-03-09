@@ -20,8 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_164533) do
     t.integer "publication_year"
     t.string "summary"
     t.string "genre"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.integer "rating", default: 0, null: false
     t.boolean "wishlisted"
   end
