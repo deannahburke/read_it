@@ -24,13 +24,14 @@ class WishlistController < ApplicationController
 
     def update
         @book = Book.find(params[:book_id])
-        # binding.pry
         @book.update(book_params)
+        @book.update_attribute(:wishlisted, true)
+        # binding.pry
         redirect_to "/wishlist"
     end
     
 private
     def book_params
-        params.permit(:title, :author, :publication_year, :genre, :summary, :rating)
+        params.permit(:title, :author, :publication_year, :genre, :summary, :rating, :wishlisted)
     end
 end
