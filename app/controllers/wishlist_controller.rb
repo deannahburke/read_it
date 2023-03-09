@@ -17,6 +17,17 @@ class WishlistController < ApplicationController
             redirect_to "/wishlist/new"
         end
     end
+
+    def edit
+        @book = Book.find(params[:book_id])
+    end
+
+    def update
+        @book = Book.find(params[:book_id])
+        # binding.pry
+        @book.update(book_params)
+        redirect_to "/wishlist"
+    end
     
 private
     def book_params

@@ -1,0 +1,9 @@
+<div class="margin"><h1>Edit Book</h1>
+<%= form_with url: "/wishlist/#{@book.id}", method: :patch, local: true do |f| %>
+    <p><%= f.label :title %>
+    <%= f.text_field :title, :value => @book.title%></p>
+    <p><%= f.label :author %>
+    <%= f.text_field :author, :value => @book.author %></p>
+    <p><%= f.submit "Update" %></p>
+<% end %>
+</div>   

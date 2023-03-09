@@ -2,7 +2,7 @@
 <p><%= button_to "Add Book", "/wishlist/new", method: :get %></p>
 <% @book.each do |wishlisted_book| %>
     <% if wishlisted_book.wishlisted == true%>
-        <%= wishlisted_book.title %>
-        <%= wishlisted_book.author %>
+        <p>Title: <%= wishlisted_book.title %>
+        Author: <%= wishlisted_book.author %></p>
     <% end%>
 <% end %>
